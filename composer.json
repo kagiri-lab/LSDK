@@ -1,0 +1,17 @@
+{
+    "name": "kilyte/lucensdk",
+    "autoload": {
+        "psr-4": {
+            "kilyte\\lucen\\SDK\\": "./src"
+        }
+    },
+    "authors": [
+        {
+            "name": "kagiri",
+            "email": "kagiri@sharksight.co.ke"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.4"
+    }
+}
