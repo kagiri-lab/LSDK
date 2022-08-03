@@ -1,5 +1,5 @@
 {
-    "name": "kilyte/lucensdk",
+    "name": "kilyte/lsdk",
     "autoload": {
         "psr-4": {
             "kilyte\\lucen\\SDK\\": "./src"
