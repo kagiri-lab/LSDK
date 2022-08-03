@@ -39,4 +39,16 @@ class Lucen extends KYC
         $kcy = $this->gold($id);
         return json_decode(json_encode($kcy));
     }
+
+    public function get_vehicle($registration)
+    {
+        $kyc = $this->vehicle($registration);
+        return json_decode(json_encode($kyc));
+    }
+
+    public function get_pin($pin)
+    {
+        $kyc = $this->pin($pin);
+        return json_decode(json_encode($kyc));
+    }
 }
