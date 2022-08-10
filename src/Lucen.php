@@ -22,33 +22,15 @@ class Lucen extends KYC
         ]);
     }
 
-    public function get_bronze($id): stdClass
+    public function submit_task(array $options): stdClass
     {
-        $kcy = $this->bronze($id);
+        $kcy = $this->submit($options);
         return json_decode(json_encode($kcy));
     }
 
-    public function get_silver($id): stdClass
+    public function get_task($task): stdClass
     {
-        $kcy = $this->silver($id);
+        $kcy = $this->get($task);
         return json_decode(json_encode($kcy));
-    }
-
-    public function get_gold($id): stdClass
-    {
-        $kcy = $this->gold($id);
-        return json_decode(json_encode($kcy));
-    }
-
-    public function get_vehicle($registration)
-    {
-        $kyc = $this->vehicle($registration);
-        return json_decode(json_encode($kyc));
-    }
-
-    public function get_pin($pin)
-    {
-        $kyc = $this->pin($pin);
-        return json_decode(json_encode($kyc));
     }
 }

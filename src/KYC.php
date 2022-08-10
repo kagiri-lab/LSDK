@@ -2,48 +2,23 @@
 
 namespace kilyte\lucen\SDK;
 
-use stdClass;
 
 class KYC extends Service
 {
 
-    public function bronze($id): array
+    public function submit(array $options): array
     {
-        if (empty($id))
-            return $this->error("ID is required");
-        $response = $this->client->get("bronze/$id");
+        if (empty($options))
+            return $this->error("Options are required");
+        $response = $this->client->post("api/task/submit", [ 'json' => $options]);
         return $this->success($response);
     }
 
-    public function silver($id): array
+    public function get(array $task): array
     {
-        if (empty($id))
-            return $this->error("ID is required");
-        $response = $this->client->get("silver/$id");
-        return $this->success($response);
-    }
-
-    public function gold($id): array
-    {
-        if (empty($id))
-            return $this->error("ID is required");
-        $response = $this->client->get("gold/$id");
-        return $this->success($response);
-    }
-
-    public function vehicle($registration): array
-    {
-        if (empty($registration))
-            return $this->error("Vehicle registration is required");
-        $response = $this->client->get("vehicle/$registration");
-        return $this->success($response);
-    }
-
-    public function pin($pin): array
-    {
-        if (empty($pin))
-            return $this->error("PIN is required");
-        $response = $this->client->get("pin/$pin");
+        if (empty($task))
+            return $this->error("Query ID is required");
+        $response = $this->client->post("api/task/get", ['json' => $task]);
         return $this->success($response);
     }
 }
